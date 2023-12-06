@@ -19,6 +19,7 @@ public class MyThirdSpringBean {
     }
 
     public void doThis(){
+        mySecondSpringBean.doOther();
         System.out.println("DoThis");
     }
 

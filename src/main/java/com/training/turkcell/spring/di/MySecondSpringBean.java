@@ -11,6 +11,7 @@ public class MySecondSpringBean {
     private MyFirstSpringBean myFirstSpringBean;
 
     public void doOther(){
+        myFirstSpringBean.doIt();
         System.out.println("DoOther");
     }
 

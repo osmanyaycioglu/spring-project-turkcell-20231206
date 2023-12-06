@@ -15,6 +15,7 @@ public class MyFifthSpringBean {
     }
 
     public void doThat(){
+        myForthSpringBean.doThat();
         System.out.println("DoThat");
     }
 

@@ -10,6 +10,7 @@ public class MyForthSpringBean {
     private final MyThirdSpringBean myThirdSpringBean;
 
     public void doThat(){
+        myThirdSpringBean.doThis();
         System.out.println("DoThat");
     }
 

@@ -4,6 +4,8 @@ import com.training.turkcell.spring.di.MyFirstSpringBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.lang.reflect.Constructor;
+
 @SpringBootApplication
 public class SpringProjectApplication {
 
@@ -23,6 +25,14 @@ public class SpringProjectApplication {
         System.out.println("Forward : " + km);
 
         MyFirstSpringBean beanLoc1 = new MyFirstSpringBean();
+        Class<MyFirstSpringBean> myFirstSpringBeanClassLoc = MyFirstSpringBean.class;
+        try {
+            Constructor<MyFirstSpringBean> constructorLoc = myFirstSpringBeanClassLoc.getConstructor();
+            MyFirstSpringBean              myFirstSpringBeanLoc = constructorLoc.newInstance();
+        } catch (Exception eParam) {
+            throw new RuntimeException(eParam);
+        }
+
         MyFirstSpringBean beanLoc2 = new MyFirstSpringBean();
 
     }

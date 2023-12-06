@@ -12,6 +12,7 @@ public class MyThirdSpringBean {
     @Autowired
     public MyThirdSpringBean(final MySecondSpringBean mySecondSpringBeanParam) {
         mySecondSpringBean = mySecondSpringBeanParam;
+        System.out.println("Init");
     }
 
     public MyThirdSpringBean(String str) {

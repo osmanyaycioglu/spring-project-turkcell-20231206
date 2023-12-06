@@ -14,7 +14,5 @@ public class Car {
     private int averageSpeed;
     private int currentSpeed;
     private double gps;
-
-
 }
 

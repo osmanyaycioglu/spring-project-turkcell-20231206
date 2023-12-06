@@ -1,5 +1,6 @@
 package com.training.turkcell.spring;
 
+
 public class CarProcess {
     private Car car;
 

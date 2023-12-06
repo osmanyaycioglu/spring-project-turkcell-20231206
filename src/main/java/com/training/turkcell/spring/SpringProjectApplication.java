@@ -1,5 +1,6 @@
 package com.training.turkcell.spring;
 
+import com.training.turkcell.spring.di.MyFirstSpringBean;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,8 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class SpringProjectApplication {
 
     public static void main(String[] args) {
-//        SpringApplication.run(SpringProjectApplication.class,
-//                              args);
+        SpringApplication.run(SpringProjectApplication.class,
+                              args);
 
         Car carLoc1 = new Car("320",
                               "BMW",
@@ -20,6 +21,10 @@ public class SpringProjectApplication {
         CarProcess carProcessLoc = new CarProcess(carLoc1);
         int        km            = carProcessLoc.forward(30);
         System.out.println("Forward : " + km);
+
+        MyFirstSpringBean beanLoc1 = new MyFirstSpringBean();
+        MyFirstSpringBean beanLoc2 = new MyFirstSpringBean();
+
     }
 
 }

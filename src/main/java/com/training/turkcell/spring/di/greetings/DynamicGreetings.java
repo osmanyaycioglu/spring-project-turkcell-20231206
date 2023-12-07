@@ -4,7 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @RequiredArgsConstructor
-public class DynamicGreetings implements IGreetings {
+public class DynamicGreetings  extends AbstractGreetings {
     private final String helloPrefix;
     private final String goodbyePrefix;
 

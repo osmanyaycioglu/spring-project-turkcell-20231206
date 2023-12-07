@@ -26,16 +26,6 @@ public class GreetingsConfig {
                                     goodbyePrefix);
     }
 
-    @Bean("dynamicGreetings")
-    public IGreetings dynamicGrBeanA(@Value("${app.greetings.language}") String language) {
-        switch (language){
-            case "eng":
-                return new EnglishGreetings();
-            case "tr":
-            default:
-                return new TurkishGreetings();
-        }
-    }
 
     @Bean
     public IGreetings dynamicGrBeanB(Environment environmentParam) {

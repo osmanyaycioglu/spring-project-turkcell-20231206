@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 @Component
 //@Primary
 @Qualifier("engTalk")
-public class EnglishGreetings implements IGreetings {
+public class EnglishGreetings  extends AbstractGreetings {
 
     @Override
     public String sayHello(final String name,

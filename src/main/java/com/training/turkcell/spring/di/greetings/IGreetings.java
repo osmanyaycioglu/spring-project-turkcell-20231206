@@ -1,6 +1,8 @@
 package com.training.turkcell.spring.di.greetings;
 
-public interface IGreetings {
+import org.springframework.beans.factory.BeanNameAware;
+
+public interface IGreetings extends BeanNameAware {
     String sayHello(String name,
                     String surname);
 
@@ -12,5 +14,7 @@ public interface IGreetings {
         return "Speaking : " + sayHello(name,
                                         surname);
     }
+
+    String getBeanName();
 
 }

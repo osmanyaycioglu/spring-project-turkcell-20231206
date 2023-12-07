@@ -1,24 +1,29 @@
 package com.training.turkcell.spring;
 
+import com.training.turkcell.common.MyBeanConfig;
 import com.training.turkcell.spring.di.MyFifthSpringBean;
 import com.training.turkcell.spring.di.MyFirstSpringBean;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.context.annotation.Import;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 
 import java.lang.reflect.Constructor;
-
 @SpringBootApplication
+//@SpringBootApplication(scanBasePackages = {"com.training.turkcell.spring",
+//                                           "com.training.turkcell.common"
+//})
 @EnableScheduling
 @RequiredArgsConstructor
+@Import({MyBeanConfig.class})
 public class SpringProjectApplication {
     private final MyFifthSpringBean fifthSpringBean;
 
-    @Scheduled(fixedDelay = 10_000,initialDelay = 2_000)
-    public void methodA(){
+    @Scheduled(fixedDelay = 10_000, initialDelay = 2_000)
+    public void methodA() {
         fifthSpringBean.doThat();
     }
 
@@ -40,10 +45,10 @@ public class SpringProjectApplication {
         int        km            = carProcessLoc.forward(30);
         System.out.println("Forward : " + km);
 
-        MyFirstSpringBean beanLoc1 = new MyFirstSpringBean();
+        MyFirstSpringBean        beanLoc1                  = new MyFirstSpringBean();
         Class<MyFirstSpringBean> myFirstSpringBeanClassLoc = MyFirstSpringBean.class;
         try {
-            Constructor<MyFirstSpringBean> constructorLoc = myFirstSpringBeanClassLoc.getConstructor();
+            Constructor<MyFirstSpringBean> constructorLoc       = myFirstSpringBeanClassLoc.getConstructor();
             MyFirstSpringBean              myFirstSpringBeanLoc = constructorLoc.newInstance();
         } catch (Exception eParam) {
             throw new RuntimeException(eParam);

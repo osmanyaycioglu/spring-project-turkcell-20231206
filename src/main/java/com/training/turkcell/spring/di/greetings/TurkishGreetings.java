@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Qualifier("trTalk")
-public class TurkishGreetings implements IGreetings {
+public class TurkishGreetings extends AbstractGreetings {
 
     public void method(){
     }

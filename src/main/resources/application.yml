@@ -59,6 +59,10 @@ printer:
     prefix: Dear
 server:
   port: 9090
+  error:
+    include-binding-errors: always
+    include-exception: true
+    include-message: always
 spring:
   profiles:
     active: dev,ext

@@ -2,11 +2,11 @@ package com.training.turkcell.spring.lab1;
 
 import org.springframework.stereotype.Component;
 
-@Component
-public class EmployeeInfoPrinter {
+public class EmployeeInfoPrinter implements IPrinter {
 
-    public void print(Employee employeeParam) {
-        System.out.println("Employee Info : " + employeeParam);
+    @Override
+    public String print(final Employee employeeParam) {
+        return "Employee Info : " + employeeParam;
     }
 
 }

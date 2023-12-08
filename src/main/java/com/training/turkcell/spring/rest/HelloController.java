@@ -1,6 +1,8 @@
 package com.training.turkcell.spring.rest;
 
+import com.training.turkcell.spring.rest.models.Customer;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 //@Controller
 //@ResponseBody
@@ -43,5 +45,35 @@ public class HelloController {
                              @RequestParam String surname) {
         return "Hello 2 : " + name + " " + surname;
     }
+
+    @GetMapping("/hello3/{abc}/{xyz}")
+    public String helloV3(@PathVariable("abc") String name,
+                          @PathVariable("xyz") String surname) {
+        return "Hello 3 : " + name + " " + surname;
+    }
+
+    @GetMapping("/hello3a/{name}/{surname}")
+    public String helloV3a(@PathVariable String name,
+                           @PathVariable String surname) {
+        return "Hello 3a : " + name + " " + surname;
+    }
+
+    @GetMapping("/hello4/{abc}")
+    public String helloV4(@PathVariable("abc") String name,
+                          @RequestParam("xyz") String surname) {
+        return "Hello 4 : " + name + " " + surname;
+    }
+
+    @GetMapping("/hello5/{abc}")
+    public String helloV5(@PathVariable("abc") String name,
+                          @MatrixVariable("xyz") String surname) {
+        return "Hello 4 : " + name + " " + surname;
+    }
+
+    @PostMapping("/hello6")
+    public String helloV6(@RequestBody Customer customerParam) {
+        return "Hello 4 : " + customerParam;
+    }
+
 
 }

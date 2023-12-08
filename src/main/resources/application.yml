@@ -1,0 +1,69 @@
+app:
+  greetings:
+    goodbye-prefix: goodbye
+    hello-prefix: hello
+    language: eng
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+my:
+  app:
+    check-period: 1000
+    cities:
+      - istanbul
+      - ankara
+      - izmir
+      - adana
+    connection-password: 123456
+    connection-port: 9090
+    connection-url: http://127.0.0.1
+    connection-user: osman
+    default-customer:
+      height: 180
+      name: default
+      surname: deneme
+      weight: 100
+    departments:
+      - city: istanbul
+        division: tech
+        name: it
+      - city: ankara
+        division: sale
+        name: sales
+      - city: izmir
+        division: human
+        name: hr
+      - city: adana
+        division: human
+        name: akademi
+    main-department:
+      city: istanbul
+      division: business
+      name: main department
+    test-str: test 1
+    admins:
+      osman:
+        name: osman
+        surname: yaycıoğlu
+        height: 200
+        weight: 90
+      ali:
+        name: ali
+        surname: veli
+        height: 180
+        weight: 120
+printer:
+  card:
+    prefix: Dear
+server:
+  port: 9090
+spring:
+  profiles:
+    active: dev,ext
+    default: live,ext
+  task:
+    scheduling:
+      pool:
+        size: 2
